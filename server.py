@@ -26,7 +26,10 @@ def analyze_text():
     emotions_list = []
     for emotion_name, score in emotion.items():
         if emotion_name != "dominant_emotion":
-            emotions_list.append(f"'{emotion_name}': {score}") 
+            emotions_list.append(f"'{emotion_name}': {score}")
+    
+    if emotion['dominant_emotion'] == None:
+        return 'Invalid text! Please try again!'
 
     # Join emotions with appropriate separators
     output_text += ", ".join(emotions_list[:-1]) 
